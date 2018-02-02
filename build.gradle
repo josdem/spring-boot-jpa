@@ -11,10 +11,9 @@ buildscript {
 }
 
 apply plugin: 'groovy'
-apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-group = 'com.example'
+group = 'com.jos.dem.springboot.jpa'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -25,6 +24,7 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.codehaus.groovy:groovy')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
