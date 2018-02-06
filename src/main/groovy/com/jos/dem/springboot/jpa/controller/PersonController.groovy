@@ -39,7 +39,7 @@ class PersonController {
 		log.info 'Creating person'
 		ModelAndView modelAndView = new ModelAndView('persons/create')
 		Command personCommand = new PersonCommand()
-		modelAndView.addObject(person, personCommand)
+		modelAndView.addObject('personCommand', personCommand)
 		modelAndView
 	}
 	
