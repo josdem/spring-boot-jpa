@@ -50,7 +50,7 @@ class PersonController {
 	@RequestMapping(method=POST)
 	ModelAndView save(@Valid PersonCommand personCommand, BindingResult bindingResult){
 		log.info "Registering new Person: ${personCommand.nickname}"
-		ModelAndView modelAndView = new ModelAndView('list')
+		ModelAndView modelAndView = new ModelAndView('persons/list')
 		if(bindingResult.hasErrors()){
 			modelAndView.setViewName('persons/create')
 			modelAndView.addObject('personCommand', personCommand)
