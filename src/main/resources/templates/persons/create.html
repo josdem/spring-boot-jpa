@@ -1,8 +1,19 @@
 <html>
+<head>
+  <link rel="stylesheet" th:href="@{/assets/third-party/bootstrap/dist/css/bootstrap.min.css}" />
+</head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <font color="white">Spring Boot</font>
   </nav>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome!</h1>
+      <p>Spring Boot Workshop</p>
+      <a href="https://github.com/josdem/spring-boot-workshop" class="btn btn-primary btn-lg" role="button">Learn more</a>
+    </div>
+  </div>
+  <div class="container">
   <form id="create" th:action="@{/persons}" th:object="${personCommand}" method="post">
   	<label for="nickname">Nickname:</label>
   	<input type="text" name="nickname" th:field="*{nickname}" placeholder="nickname" id="nickname"/>
@@ -14,6 +25,7 @@
   	<br/><br/>
   	<button id="btn-success" type="submit">Submit</button> 
   </form>
+  </div>
   <footer>
     <nav class="navbar navbar-inverse navbar-fixed-bottom">
       <a class="navbar-brand" href="https://github.com/josdem/spring-boot-workshop">josdem 2018</a>

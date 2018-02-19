@@ -16,7 +16,7 @@ plugins {
 
 bower {
   installBase = 'src/main/resources/static/assets/third-party'
-  'bootstrap'('4.0.0'){
+  'bootstrap'('3.3.7'){
     source '**'
   }
 }
