@@ -3,6 +3,7 @@ package com.jos.dem.springboot.jpa.controller;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
+import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -21,13 +22,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Controller
-@RequestMapping('persons/**')
+@RequestMapping("persons/**")
 public class PersonController {
 
 	@Autowired
-	private PersonRepository personRepository
+	private PersonRepository personRepository;
 
-	private Logger log = LoggerFactory.getLogger(this.class)
+	private Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@RequestMapping(method=GET)
 	public ModelAndView getAll(){
@@ -38,7 +39,7 @@ public class PersonController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value='create', method=GET)
+	@RequestMapping(value="create", method=GET)
 	public ModelAndView create(){
 		log.info("Creating person");
 		ModelAndView modelAndView = new ModelAndView("persons/create");
@@ -56,10 +57,10 @@ public class PersonController {
 			modelAndView.addObject("personCommand", personCommand);
 			return modelAndView;
 		}
-		Person person = new Person(nickname:personCommand.nickname, email:personCommand.email);
+		Person person = new Person(personCommand.getNickname(), personCommand.getEmail());
 		personRepository.save(person);
 		List<Person> persons = personRepository.findAll();
-		modelAndView.addObject('persons', persons);
+		modelAndView.addObject("persons", persons);
 		return modelAndView;
 	}
 

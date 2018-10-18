@@ -4,3 +4,4 @@ node_modules/
 src/main/resources/static/
 **swp
 **swo
+package-lock.json
