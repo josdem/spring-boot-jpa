@@ -1,14 +1,14 @@
-package com.jos.dem.springboot.jpa.controller
+package com.jos.dem.springboot.jpa.controller;
 
-import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-class DemoController {
+public class DemoController {
 
 	@RequestMapping('/')
-  String index(){
-    'index'
+  public String index(){
+    return "index";
   }
-	
+
 }
