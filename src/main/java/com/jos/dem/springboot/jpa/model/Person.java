@@ -9,8 +9,8 @@ import javax.persistence.GeneratedValue;
 
 import lombok.Data;
 
-@Entity
 @Data
+@Entity
 public class Person {
 
 	@Id
