@@ -7,7 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class Person {
 
 	@Id
@@ -19,10 +22,5 @@ public class Person {
 
   @Column(unique=true, nullable=false)
   private String email;
-
-  public Person(String nickname, String email){
-    this.nickname = nickname;
-    this.email = email;
-  }
 
 }

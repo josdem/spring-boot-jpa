@@ -4,6 +4,9 @@ import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Email;
 
+import lombok.Data;
+
+@Data
 public class PersonCommand implements Command {
 
 	@NotNull
@@ -14,13 +17,5 @@ public class PersonCommand implements Command {
 	@NotNull
 	@Size(min=1, max=250)
 	private String email;
-
-  public String getNickname(){
-    return nickname;
-  }
-
-  public String getEmail(){
-    return email;
-  }
 
 }

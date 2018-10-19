@@ -57,7 +57,9 @@ public class PersonController {
 			modelAndView.addObject("personCommand", personCommand);
 			return modelAndView;
 		}
-		Person person = new Person(personCommand.getNickname(), personCommand.getEmail());
+		Person person = new Person();
+    person.setNickname(personCommand.getNickname());
+    person.setEmail(personCommand.getEmail());
 		personRepository.save(person);
 		List<Person> persons = personRepository.findAll();
 		modelAndView.addObject("persons", persons);
