@@ -10,17 +10,6 @@ buildscript {
 	}
 }
 
-plugins {
-  id 'com.craigburke.bower-installer' version '2.5.1'
-}
-
-bower {
-  installBase = 'src/main/resources/static/assets/third-party'
-  'bootstrap'('3.3.7'){
-    source '**'
-  }
-}
-
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
@@ -41,4 +30,8 @@ dependencies {
 	compile("mysql:mysql-connector-java:5.1.34")
   compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+bootRun {
+  systemProperties = System.properties
 }
